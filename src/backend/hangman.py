@@ -1,9 +1,14 @@
 import random
 
 class Hangman:
-	def __init__(self, category):
+	def __init__(self, mode, category):
 		filename = "../../assets/data/" + category + ".txt"
 		self.words = self.read_file(filename)
+		if mode == "easy":
+			self.max_attempts = 9
+		else:
+			self.max_attempts = 6
+
 		self.reset()
 
 	@staticmethod
@@ -30,9 +35,14 @@ class Hangman:
 				flag = 1
 
 		if(flag == 0):
-			return 0
+			self.num_attempts += 1
+			if (self.num_attempts == self.max_attempts):
+				return 0
+			return 2
 		else:
-			return 1
+			if self.check_win():
+				return 1
+			return 3
 
 	def check_win(self):
 		return self.predicted_word_count == self.word_size
@@ -44,6 +54,7 @@ class Hangman:
 		self.correct_letters = set()
 		self.incorrect_letters = set()
 		self.predicted_word_count = 0
+		self.num_attempts = 0
 
 if __name__ == "__main__":
-	man = Hangman('sports')
+	man = Hangman("easy", "sports")
