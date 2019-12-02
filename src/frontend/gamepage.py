@@ -11,6 +11,9 @@ class Gamepage(object):
 		self.hanged = Hanged()
 		self.game = GameInteraction(mode, category)
 
+	def click(self, win, mouse_pos):
+		return self.game.click(win, mouse_pos)
+
 	def draw(self, win):
 		win.blit(self.bg, (0, 0))
 		self.mob.draw(win)
