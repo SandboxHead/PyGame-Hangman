@@ -63,7 +63,7 @@ class Controller(object):
 	def failed_game(self):
 		self.game_mode = 2
 		self.last_page = Failpage("game_over_screen")
-		self.uddate_json(0)
+		self.update_json(0)
 
 	def passed_game(self):
 		self.update_json(1)
