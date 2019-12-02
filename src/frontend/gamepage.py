@@ -12,7 +12,15 @@ class Gamepage(object):
 		self.game = GameInteraction(mode, category)
 
 	def click(self, win, mouse_pos):
-		return self.game.click(win, mouse_pos)
+		response = self.game.click(win, mouse_pos)
+		if(response == "wrong"):
+			self.mob.negative()
+		elif(response == "right"):
+			self.mob.positive()
+		if(response == "pass"):
+			return self.hanged.click(mouse_pos)
+
+		return response
 
 	def draw(self, win):
 		win.blit(self.bg, (0, 0))

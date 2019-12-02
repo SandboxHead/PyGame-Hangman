@@ -77,6 +77,7 @@ class Frontpage(object):
 
 	def click(self, pos):
 		print("click detected", pos)
+		self.start_game = False
 		if(320 < pos[1] < 390):
 			self.check_diff_click(pos)
 		elif(620 < pos[1] < 690):

@@ -50,7 +50,6 @@ class GameInteraction(object):
 				win.blit(self.alphabet_boxes[i], (start_point + (i-18)*60 + 15, 280))
 				win.blit(text, (start_point + (i-18)*60 + 28, 285))
 
-
 	def click(self, win, mouse_pos):
 		row = 0
 		if(150 < mouse_pos[1] < 190):
@@ -60,20 +59,20 @@ class GameInteraction(object):
 		elif(280 < mouse_pos[1] < 329):
 			row = 2
 		else:
-			return None
+			return "pass"
 		start_point = 960 - 60 * 5
 		col = -1
 
 		for i in range(9):
 			if(row == 2 and i == 8):
-				return None
+				return "pass"
 			if(start_point < mouse_pos[0] < start_point + 60):
 				col = i
 				break	
 			start_point += 60
 
 		if col == -1:
-			return None
+			return "pass"
 
 		index = row*9 + col
 		letter = chr(index + ord('a'))
@@ -81,7 +80,7 @@ class GameInteraction(object):
 		response = self.hangman.insert_letter(letter)
 
 		if(response < 0):
-			return None
+			return "pass"
 
 		elif(response == 0):
 			status = "failed"

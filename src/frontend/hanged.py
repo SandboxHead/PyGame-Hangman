@@ -33,7 +33,12 @@ class Hanged(object):
 		self.errors += 1
 
 
-
+	def click(self, mouse_pos):
+		if(30 < mouse_pos[0] < 180 and 30 < mouse_pos[1] < 130 ):
+			return "menu"
+		elif(1750 < mouse_pos[0] < 1900 and 30 < mouse_pos[1] < 130 ):
+			return "retry"
+		return None
 
 
 	def draw(self, win):
