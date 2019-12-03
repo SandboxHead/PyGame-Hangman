@@ -3,10 +3,13 @@ import sys
 sys.path.insert(1, '../backend')
 from hangman import Hangman
 
+
+# It is the main part of game which displays guessed words and empty blocks for words. 
+# It interact with backend APIs of hangman and displays the result of the ongoing game.
 class GameInteraction(object):
 	def __init__(self, mode, category):
-		self.letter = pygame.image.load('../../assets/images/letterRectangle.png')
-		self.round = pygame.image.load('../../assets/images/RoundRectangle.png')
+		self.letter = pygame.image.load('assets/images/letterRectangle.png')
+		self.round = pygame.image.load('assets/images/RoundRectangle.png')
 		self.hangman = Hangman(mode, category)
 
 		self.word_boxes = []
@@ -17,7 +20,7 @@ class GameInteraction(object):
 		for i in range(26):
 			self.alphabet_boxes.append(pygame.transform.scale(self.round, (50, 50)))
 
-		self.font = pygame.font.Font('../../assets/fonts/TEXAT BOLD PERSONAL USE___.otf', 32)
+		self.font = pygame.font.Font('assets/fonts/TEXAT BOLD PERSONAL USE___.otf', 32)
 
 
 

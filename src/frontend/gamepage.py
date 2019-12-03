@@ -3,9 +3,10 @@ from mob import Mob
 from hanged import Hanged
 from game_interaction import GameInteraction
 
+# Class responsible for Game screen. It uses mob, hanged and game as subpart to show in it.
 class Gamepage(object):
 	def __init__(self, mode, category):
-		self.bg = pygame.image.load('../../assets/images/background2.jpg')
+		self.bg = pygame.image.load('assets/images/background2.jpg')
 		self.bg = pygame.transform.scale(self.bg, (1920, 1080))
 		self.mob = Mob()
 		self.hanged = Hanged()

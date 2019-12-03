@@ -1,11 +1,12 @@
 import pygame
 
-class Failpage(object):
+# Class responsible for last page of game. Either pass or fail
+class Lastpage(object):
 	def __init__(self, bg):
-		self.bg = pygame.image.load('../../assets/images/' + bg + '.jpg')
+		self.bg = pygame.image.load('assets/images/' + bg + '.jpg')
 		self.bg = pygame.transform.scale(self.bg, (1920, 1080))
-		self.menu = pygame.image.load('../../assets/images/MENU.png')
-		self.retry = pygame.image.load('../../assets/images/RETRY.png')
+		self.menu = pygame.image.load('assets/images/MENU.png')
+		self.retry = pygame.image.load('assets/images/RETRY.png')
 
 
 	def click(self, mouse_pos):

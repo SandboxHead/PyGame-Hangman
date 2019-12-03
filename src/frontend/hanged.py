@@ -1,27 +1,28 @@
 import pygame
 
+# Class responsible for displaying hanging man. Based on the errors, it increases the part of man displayed
 class Hanged(object):
 	def __init__(self):
-		self.post = pygame.image.load('../../assets/images/post.png')
+		self.post = pygame.image.load('assets/images/post.png')
 		self.post = pygame.transform.scale(self.post, (436, 800))
-		self.noose = pygame.image.load('../../assets/images/noose.png')
-		self.head = pygame.image.load('../../assets/images/HEAD.png')
+		self.noose = pygame.image.load('assets/images/noose.png')
+		self.head = pygame.image.load('assets/images/HEAD.png')
 		self.head = pygame.transform.scale(self.head, (70, 70))
-		self.arm_left = pygame.image.load('../../assets/images/ARM.png')
+		self.arm_left = pygame.image.load('assets/images/ARM.png')
 
 		self.arm_right = pygame.transform.flip(self.arm_left, False, True)
-		self.leg_left = pygame.image.load('../../assets/images/LEG.png')
+		self.leg_left = pygame.image.load('assets/images/LEG.png')
 
 		self.leg_right = pygame.transform.flip(self.leg_left, False, True)
 		
-		self.torso = pygame.image.load('../../assets/images/TORSO.png')
-		self.hand_left = pygame.image.load('../../assets/images/ez_hand.png')
+		self.torso = pygame.image.load('assets/images/TORSO.png')
+		self.hand_left = pygame.image.load('assets/images/ez_hand.png')
 		self.hand_right = pygame.transform.flip(self.hand_left, True, False)
 
-		self.frown = pygame.image.load('../../assets/images/EZ_FROWN.png')
+		self.frown = pygame.image.load('assets/images/EZ_FROWN.png')
 		self.frown = pygame.transform.scale(self.frown, (70, 70))
-		self.menu = pygame.image.load('../../assets/images/MENU.png')
-		self.retry = pygame.image.load('../../assets/images/RETRY.png')
+		self.menu = pygame.image.load('assets/images/MENU.png')
+		self.retry = pygame.image.load('assets/images/RETRY.png')
 
 		self.menu = pygame.transform.scale(self.menu, (150, 100))
 		self.retry = pygame.transform.scale(self.retry, (150, 100))

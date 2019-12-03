@@ -4,21 +4,21 @@ class Frontpage(object):
 	def __init__(self):
 		self.difficulties = ["Easy", "Hard"]
 		self.categories = ["World", "Sports", "Science", "People", "Food"]
-		self.diff_images = [pygame.image.load('../../assets/images/EASY.png'), pygame.image.load('../../assets/images/HARD.png')]
+		self.diff_images = [pygame.image.load('assets/images/EASY.png'), pygame.image.load('assets/images/HARD.png')]
 		self.categ_images = [
-			pygame.image.load('../../assets/images/WORLD.png'),
-			pygame.image.load('../../assets/images/SPORTS.png'),
-			pygame.image.load('../../assets/images/SCIENCE.png'),
-			pygame.image.load('../../assets/images/PEOPLE.png'),
-			pygame.image.load('../../assets/images/FOOD.png')
+			pygame.image.load('assets/images/WORLD.png'),
+			pygame.image.load('assets/images/SPORTS.png'),
+			pygame.image.load('assets/images/SCIENCE.png'),
+			pygame.image.load('assets/images/PEOPLE.png'),
+			pygame.image.load('assets/images/FOOD.png')
 		]	
 		self.b1_dim = (150, 70)
 		self.b2_dim = (210, 150)
-		self.start_button = pygame.image.load('../../assets/images/START.png')
+		self.start_button = pygame.image.load('assets/images/START.png')
 
-		self.bg = pygame.image.load('../../assets/images/background1.jpg')
-		self.font1 = pygame.font.Font('../../assets/fonts/Drifttype Solid.ttf', 80)
-		self.font2 = pygame.font.Font('../../assets/fonts/Drifttype Solid.ttf', 30)
+		self.bg = pygame.image.load('assets/images/background1.jpg')
+		self.font1 = pygame.font.Font('assets/fonts/Drifttype Solid.ttf', 80)
+		self.font2 = pygame.font.Font('assets/fonts/Drifttype Solid.ttf', 30)
 		self.mode = "easy"
 		self.category = "world"
 		self.start_game = False

@@ -1,8 +1,10 @@
 import random
 
+
+# Main backend class. Game logic written inside
 class Hangman:
 	def __init__(self, mode, category):
-		filename = "../../assets/data/" + category + ".txt"
+		filename = "assets/data/" + category + ".txt"
 		self.words = self.read_file(filename)
 		if mode == "easy":
 			self.max_attempts = 9
@@ -16,6 +18,8 @@ class Hangman:
 		with open (filename, 'r') as file:
 			return file.read().splitlines()
 
+	# tries to insert character c in word. Returns response code for different responses
+	# response : -2 word already tried, -1 Not an alphabet, 0 Game over, 1 game won, 2 incorrect prediction, 3 correct prediction 
 	def insert_letter(self, c):
 		if(len(c) != 1):
 			return -1
@@ -47,13 +51,15 @@ class Hangman:
 				return 1
 			return 3
 
+	# Checks if game is over with a win
 	def check_win(self):
 		return self.predicted_word_count == self.word_size
 
+	# Checks if the character had been checked before
 	def already_checked(self, c):
 		return c in self.correct_letters or c in self.incorrect_letters
 
-
+	# Resets to a all new game
 	def reset(self):
 		self.curr_word = random.choice(self.words).lower()
 		# print(self.curr_word)
@@ -63,6 +69,3 @@ class Hangman:
 		self.incorrect_letters = set()
 		self.predicted_word_count = 0
 		self.num_attempts = 0
-
-if __name__ == "__main__":
-	man = Hangman("easy", "sports")
